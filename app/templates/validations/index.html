@@ -1,0 +1,52 @@
+{% extends "layouts/app.html" %}
+{% block title %}Validasi Menunggu{% endblock %}
+{% block breadcrumb %}<span class="text-gray-900 font-medium">Validasi Dokter</span>{% endblock %}
+{% block content %}
+<div class="space-y-4">
+    <h1 class="text-2xl font-bold text-gray-900">Validasi Dokter</h1>
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="px-5 py-4 border-b border-gray-100 flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4 text-amber-500"></i>
+            <span class="font-semibold text-gray-900 text-sm">Menunggu Validasi ({{ examinations.total }})</span>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-50 text-gray-500 text-xs uppercase">
+                    <tr>
+                        <th class="text-left px-5 py-3 font-medium">ID</th>
+                        <th class="text-left px-5 py-3 font-medium">Pasien</th>
+                        <th class="text-left px-5 py-3 font-medium">Tanggal</th>
+                        <th class="text-left px-5 py-3 font-medium">Hasil Model</th>
+                        <th class="text-left px-5 py-3 font-medium">Dikirim</th>
+                        <th class="text-left px-5 py-3 font-medium">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    {% for exam in examinations.items %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-5 py-3 font-mono text-xs text-gray-500">#{{ exam.id }}</td>
+                        <td class="px-5 py-3 font-semibold">{{ exam.patient.initials }} <span class="text-gray-400 font-normal">{{ exam.patient.patient_code }}</span></td>
+                        <td class="px-5 py-3 text-gray-500">{{ exam.examination_date.strftime('%d %b %Y') if exam.examination_date else '-' }}</td>
+                        <td class="px-5 py-3">
+                            {% if exam.prediction %}
+                            {% set cls = exam.prediction.predicted_class %}
+                            {% set badge = {'Ringan': 'bg-green-100 text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat': 'bg-red-100 text-red-700'} %}
+                            <span class="inline-flex px-2 py-0.5 rounded-md text-xs font-medium {{ badge.get(cls, 'bg-gray-100 text-gray-600') }}">{{ cls }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="px-5 py-3 text-gray-500 text-xs">{{ exam.submitted_at.strftime('%d %b %Y %H:%M') if exam.submitted_at else '-' }}</td>
+                        <td class="px-5 py-3">
+                            <a href="{{ url_for('validations.validate', exam_id=exam.id) }}" class="inline-flex items-center gap-1 bg-blue-600 text-white text-xs px-3 py-1.5 rounded-lg hover:bg-blue-700">
+                                <i data-lucide="check" class="w-3 h-3"></i> Validasi
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="6" class="px-5 py-12 text-center text-gray-400">Tidak ada pemeriksaan yang menunggu validasi.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

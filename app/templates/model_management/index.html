@@ -1,0 +1,62 @@
+{% extends "layouts/app.html" %}
+{% block title %}Manajemen Model{% endblock %}
+{% block breadcrumb %}<span class="text-gray-900 font-medium">Manajemen Model</span>{% endblock %}
+{% block content %}
+<div class="space-y-6">
+    <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-gray-900">Manajemen Model</h1>
+        <form method="POST" action="{{ url_for('model_management.train') }}" onsubmit="return confirm('Melatih ulang model akan memakan waktu. Lanjutkan?');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <button type="submit" class="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                <i data-lucide="play" class="w-4 h-4"></i> Latih Model Baru
+            </button>
+        </form>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b border-gray-200">
+                    <tr class="text-gray-500 text-xs uppercase tracking-wide">
+                        <th class="text-left px-5 py-3 font-medium">Versi</th>
+                        <th class="text-left px-5 py-3 font-medium">Tanggal Training</th>
+                        <th class="text-left px-5 py-3 font-medium">Akurasi</th>
+                        <th class="text-left px-5 py-3 font-medium">F1-Macro</th>
+                        <th class="text-left px-5 py-3 font-medium">Data (Train/Test)</th>
+                        <th class="text-left px-5 py-3 font-medium">Status</th>
+                        <th class="text-left px-5 py-3 font-medium">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    {% for version in versions %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-5 py-3 font-medium text-gray-900">{{ version.version }}</td>
+                        <td class="px-5 py-3 text-gray-500">{{ version.training_date.strftime('%d %b %Y %H:%M') }}</td>
+                        <td class="px-5 py-3 text-gray-900">{{ (version.accuracy * 100)|round(1) }}%</td>
+                        <td class="px-5 py-3 text-gray-900">{{ "%.4f"|format(version.f1_macro) }}</td>
+                        <td class="px-5 py-3 text-gray-500 text-xs">{{ version.training_data_count }} / {{ version.testing_data_count }}</td>
+                        <td class="px-5 py-3">
+                            {% if version.is_active %}
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-green-100 text-green-700">Aktif</span>
+                            {% else %}
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-600">Arsip</span>
+                            {% endif %}
+                        </td>
+                        <td class="px-5 py-3">
+                            {% if not version.is_active %}
+                            <form method="POST" action="{{ url_for('model_management.activate', version_id=version.id) }}" class="inline">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                                <button type="submit" class="text-blue-600 text-xs hover:underline">Aktifkan</button>
+                            </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="7" class="px-5 py-12 text-center text-gray-400">Belum ada versi model. Silakan latih model baru.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

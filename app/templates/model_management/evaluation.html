@@ -1,0 +1,118 @@
+{% extends "layouts/app.html" %}
+{% block title %}Evaluasi Model{% endblock %}
+{% block breadcrumb %}<a href="{{ url_for('model_management.index') }}" class="text-gray-400 hover:text-gray-600">Model</a><span class="text-gray-400 mx-1">›</span><span class="text-gray-900 font-medium">Evaluasi</span>{% endblock %}
+{% block content %}
+<div class="space-y-5">
+    <h1 class="text-2xl font-bold text-gray-900">Evaluasi Model</h1>
+
+    {% if not active_model %}
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
+        <i data-lucide="alert-circle" class="w-8 h-8 text-amber-500 mx-auto mb-2"></i>
+        <p class="text-amber-800 font-medium">Belum ada model aktif. Latih model terlebih dahulu.</p>
+        <a href="{{ url_for('model_management.index') }}" class="inline-block mt-3 text-amber-700 hover:underline text-sm">Ke Manajemen Model →</a>
+    </div>
+    {% else %}
+
+    <!-- Model info -->
+    <div class="bg-white rounded-xl border border-gray-200 p-5">
+        <h2 class="font-semibold text-gray-900 mb-4">Informasi Model</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div><p class="text-gray-500 text-xs">Nama Model</p><p class="font-medium">{{ active_model.model_name }}</p></div>
+            <div><p class="text-gray-500 text-xs">Versi</p><p class="font-medium">{{ active_model.version }}</p></div>
+            <div><p class="text-gray-500 text-xs">Algoritma</p><p class="font-medium">{{ active_model.algorithm }}</p></div>
+            <div><p class="text-gray-500 text-xs">Tanggal Training</p><p class="font-medium">{{ active_model.training_date.strftime('%d %b %Y') if active_model.training_date else '-' }}</p></div>
+            <div><p class="text-gray-500 text-xs">Dataset</p><p class="font-medium">{{ active_model.dataset_filename }}</p></div>
+            <div><p class="text-gray-500 text-xs">Dataset Hash</p><p class="font-mono text-xs mt-1 text-gray-600 break-all">{{ active_model.dataset_hash[:16] }}…</p></div>
+            <div><p class="text-gray-500 text-xs">Data Training</p><p class="font-medium">{{ active_model.training_data_count }} baris</p></div>
+            <div><p class="text-gray-500 text-xs">Data Testing</p><p class="font-medium">{{ active_model.testing_data_count }} baris</p></div>
+        </div>
+    </div>
+
+    {% if metrics %}
+    <!-- Metrics overview -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {% for label, value in [('Accuracy', metrics.accuracy), ('Precision (Macro)', metrics.precision_macro), ('Recall (Macro)', metrics.recall_macro), ('F1-Score (Macro)', metrics.f1_macro)] %}
+        <div class="bg-white rounded-xl border border-gray-200 p-5 text-center">
+            <p class="text-xs text-gray-500 mb-1">{{ label }}</p>
+            <p class="text-3xl font-bold text-gray-900">{{ (value * 100)|round(1) }}%</p>
+            <div class="mt-2 bg-gray-100 rounded-full h-1.5">
+                <div class="bg-green-500 h-1.5 rounded-full" style="width: {{ (value * 100)|round(1) }}%"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Classification report per class -->
+    <div class="bg-white rounded-xl border border-gray-200 p-5">
+        <h2 class="font-semibold text-gray-900 mb-4">Laporan Klasifikasi per Kelas</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b border-gray-200">
+                    <tr class="text-gray-500 text-xs uppercase">
+                        <th class="text-left px-4 py-3 font-medium">Kelas</th>
+                        <th class="text-center px-4 py-3 font-medium">Precision</th>
+                        <th class="text-center px-4 py-3 font-medium">Recall</th>
+                        <th class="text-center px-4 py-3 font-medium">F1-Score</th>
+                        <th class="text-center px-4 py-3 font-medium">Support</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    {% for cls_name in ['Ringan', 'Sedang', 'Berat'] %}
+                    {% if cls_name in metrics.classification_report %}
+                    {% set cr = metrics.classification_report[cls_name] %}
+                    {% set badge = {'Ringan': 'bg-green-100 text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat': 'bg-red-100 text-red-700'} %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3"><span class="inline-flex px-2 py-0.5 rounded-md text-xs font-medium {{ badge.get(cls_name, '') }}">{{ cls_name }}</span></td>
+                        <td class="px-4 py-3 text-center font-medium">{{ (cr.precision * 100)|round(1) }}%</td>
+                        <td class="px-4 py-3 text-center font-medium {% if cls_name == 'Berat' and cr.recall < 0.6 %}text-red-600{% endif %}">{{ (cr.recall * 100)|round(1) }}%</td>
+                        <td class="px-4 py-3 text-center font-medium">{{ (cr['f1-score'] * 100)|round(1) }}%</td>
+                        <td class="px-4 py-3 text-center text-gray-500">{{ cr.support|int }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    <tr class="bg-gray-50 font-semibold border-t border-gray-200">
+                        <td class="px-4 py-3 text-gray-700">Macro Avg</td>
+                        <td class="px-4 py-3 text-center">{{ (metrics.precision_macro * 100)|round(1) }}%</td>
+                        <td class="px-4 py-3 text-center">{{ (metrics.recall_macro * 100)|round(1) }}%</td>
+                        <td class="px-4 py-3 text-center">{{ (metrics.f1_macro * 100)|round(1) }}%</td>
+                        <td class="px-4 py-3 text-center text-gray-500">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Confusion matrix + notes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl border border-gray-200 p-5">
+            <h2 class="font-semibold text-gray-900 mb-4">Confusion Matrix</h2>
+            {% if confusion_matrix_exists %}
+            <img src="/static/ml/confusion_matrix.png" alt="Confusion Matrix" class="w-full rounded-lg border border-gray-100">
+            {% else %}
+            <div class="text-center py-8 text-gray-400">
+                <i data-lucide="image-off" class="w-8 h-8 mx-auto mb-2"></i>
+                <p class="text-sm">Gambar belum tersedia. Latih model untuk menghasilkan confusion matrix.</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="bg-white rounded-xl border border-gray-200 p-5 space-y-4">
+            <h2 class="font-semibold text-gray-900">Catatan Penting</h2>
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                <strong>Target Leakage Prevention:</strong><br>
+                Kolom <code class="bg-amber-100 px-1 rounded">Diagnosis_Klinis_Awal</code> dikeluarkan dari fitur model karena memiliki hubungan langsung dengan target dan dapat menyebabkan target leakage terhadap <code class="bg-amber-100 px-1 rounded">Tingkat_Keparahan_Diare</code>.
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-800">
+                <strong>Kolom Dikeluarkan:</strong><br>
+                ID_Pasien, Diagnosis_Klinis_Awal, Tingkat_Keparahan_Diare (target)
+            </div>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-xs text-red-800">
+                <strong>Disclaimer:</strong><br>
+                Model ini belum tervalidasi secara klinis. Hasil prediksi merupakan alat bantu dan tidak menggantikan keputusan dokter.
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Masuk - Deteksi Dini Diare{% endblock %}
+
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 flex">
+    <!-- Left decorative panel -->
+    <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-green-700 to-green-900 items-center justify-center p-12 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-16 left-16 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-16 right-16 w-96 h-96 bg-emerald-300 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 text-white text-center max-w-md">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="activity" class="w-10 h-10 text-white"></i>
+            </div>
+            <h1 class="text-4xl font-bold leading-tight mb-4">Deteksi Dini Diare</h1>
+            <p class="text-green-100 text-lg leading-relaxed">
+                Sistem Pendukung Keputusan Klinis untuk Deteksi Tingkat Keparahan Diare pada Anak
+            </p>
+            <div class="mt-10 grid grid-cols-3 gap-4 text-center">
+                <div class="bg-white/10 rounded-xl p-4">
+                    <p class="text-2xl font-bold">3</p>
+                    <p class="text-green-200 text-xs mt-1">Kelas Keparahan</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <p class="text-2xl font-bold">12</p>
+                    <p class="text-green-200 text-xs mt-1">Fitur Klinis</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <p class="text-2xl font-bold">500</p>
+                    <p class="text-green-200 text-xs mt-1">Data Latih</p>
+                </div>
+            </div>
+            <div class="mt-8 p-4 bg-white/10 rounded-xl border border-white/20 text-left">
+                <p class="text-green-200 text-xs">
+                    <i data-lucide="shield" class="w-3 h-3 inline mr-1"></i>
+                    <strong>Disclaimer:</strong> Sistem ini merupakan alat bantu skrining dan tidak menggantikan keputusan dokter.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right login form -->
+    <div class="flex-1 flex items-center justify-center p-8">
+        <div class="w-full max-w-md">
+            <!-- Mobile logo -->
+            <div class="flex items-center gap-3 mb-8 lg:hidden">
+                <div class="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="activity" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900">Deteksi Dini Diare</p>
+                    <p class="text-xs text-gray-500">Klinik Islamic Village</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-xl p-8">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">Selamat Datang</h2>
+                    <p class="text-gray-500 mt-1 text-sm">Masuk untuk mengakses sistem</p>
+                </div>
+
+                <!-- Flash messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                {% set color_map = {'error': 'bg-red-50 border-red-200 text-red-700', 'warning': 'bg-amber-50 border-amber-200 text-amber-700', 'success': 'bg-green-50 border-green-200 text-green-700'} %}
+                <div class="{{ color_map.get(category, 'bg-gray-50 border-gray-200 text-gray-700') }} border rounded-lg px-4 py-3 text-sm mb-4">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endwith %}
+
+                <form method="POST" action="{{ url_for('auth.login') }}" id="loginForm">
+                    {{ form.hidden_tag() }}
+
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Username atau Email</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <i data-lucide="user" class="w-4 h-4"></i>
+                                </span>
+                                {{ form.username(class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent", placeholder="Masukkan username atau email", id="username") }}
+                            </div>
+                            {% for error in form.username.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <i data-lucide="lock" class="w-4 h-4"></i>
+                                </span>
+                                <input type="password" name="password" id="password"
+                                    class="w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    placeholder="Masukkan password">
+                                <button type="button" onclick="togglePassword()"
+                                    class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                    <i data-lucide="eye" class="w-4 h-4" id="eyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                {{ form.remember_me(class="w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500") }}
+                                <span class="text-sm text-gray-600">Ingat Saya</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" id="loginBtn"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="log-in" class="w-4 h-4"></i>
+                            Masuk
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <p class="text-center text-xs text-gray-400 mt-6">
+                © 2025 Klinik Islamic Village · Sistem Deteksi Dini Diare v1.0
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePassword() {
+        const input = document.getElementById('password');
+        const icon = document.getElementById('eyeIcon');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.setAttribute('data-lucide', 'eye-off');
+        } else {
+            input.type = 'password';
+            icon.setAttribute('data-lucide', 'eye');
+        }
+        lucide.createIcons();
+    }
+</script>
+{% endblock %}

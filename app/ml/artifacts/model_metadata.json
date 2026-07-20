@@ -1,0 +1,21 @@
+{
+  "model_name": "Categorical Naive Bayes",
+  "model_version": "1.0.0-20260719051138",
+  "dataset_filename": "dataset_pasien_diare_anak_revisi.csv",
+  "dataset_hash": "4f47e3efc458bf220d9443fd7ea02984",
+  "target_column": "Tingkat_Keparahan_Diare",
+  "excluded_columns": [
+    "ID_Pasien",
+    "Diagnosis_Klinis_Awal"
+  ],
+  "training_date": "2026-07-19T05:11:38.632749",
+  "training_rows": 400,
+  "testing_rows": 100,
+  "random_state": 42,
+  "best_alpha": 0.1,
+  "classes": [
+    "Berat",
+    "Ringan",
+    "Sedang"
+  ]
+}

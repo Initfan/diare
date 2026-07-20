@@ -1,0 +1,187 @@
+{% extends "layouts/app.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block breadcrumb %}
+<span class="text-gray-900 font-medium">Dashboard</span>
+{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+    <!-- Page header -->
+    <div>
+        <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+        <p class="text-sm text-gray-500 mt-1">Selamat datang, {{ current_user.full_name }}</p>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {% set stats = [
+            ('Total Pasien', total_patients, 'users', 'blue'),
+            ('Total Pemeriksaan', total_examinations, 'clipboard-list', 'purple'),
+            ('Pemeriksaan Hari Ini', today_examinations, 'calendar', 'green'),
+            ('Menunggu Dokter', waiting_validation, 'clock', 'amber'),
+        ] %}
+        {% for label, value, icon, color in stats %}
+        {% set color_map = {'blue': 'bg-blue-50 text-blue-600', 'purple': 'bg-purple-50 text-purple-600', 'green': 'bg-green-50 text-green-600', 'amber': 'bg-amber-50 text-amber-600'} %}
+        <div class="bg-white rounded-xl border border-gray-200 p-5">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-sm font-medium text-gray-500">{{ label }}</span>
+                <div class="w-9 h-9 {{ color_map[color] }} rounded-lg flex items-center justify-center">
+                    <i data-lucide="{{ icon }}" class="w-4 h-4"></i>
+                </div>
+            </div>
+            <p class="text-3xl font-bold text-gray-900">{{ value }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Model info + Severity distribution -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- Model card -->
+        <div class="bg-white rounded-xl border border-gray-200 p-5">
+            <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="brain" class="w-4 h-4 text-gray-500"></i>
+                <h2 class="font-semibold text-gray-900 text-sm">Model Aktif</h2>
+            </div>
+            {% if active_model %}
+            <div class="space-y-3">
+                <div>
+                    <p class="text-xs text-gray-500">Nama Model</p>
+                    <p class="font-medium text-gray-900 text-sm">{{ active_model.model_name }}</p>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-500">Akurasi</p>
+                    <div class="flex items-center gap-2 mt-1">
+                        <div class="flex-1 bg-gray-100 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: {{ (active_model.accuracy * 100)|round(1) }}%"></div>
+                        </div>
+                        <span class="text-sm font-bold text-gray-900">{{ (active_model.accuracy * 100)|round(1) }}%</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-500">F1-Macro</p>
+                    <p class="font-semibold text-gray-900">{{ "%.4f"|format(active_model.f1_macro) }}</p>
+                </div>
+            </div>
+            {% else %}
+            <div class="text-center py-4">
+                <i data-lucide="alert-circle" class="w-8 h-8 text-amber-400 mx-auto mb-2"></i>
+                <p class="text-sm text-gray-500">Belum ada model aktif</p>
+                {% if current_user.is_administrator %}
+                <a href="{{ url_for('model_management.index') }}" class="text-green-600 text-xs hover:underline">Latih Model</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Severity distribution chart -->
+        <div class="lg:col-span-2 bg-white rounded-xl border border-gray-200 p-5">
+            <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-gray-500"></i>
+                <h2 class="font-semibold text-gray-900 text-sm">Distribusi Hasil Prediksi</h2>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="w-36 h-36 relative">
+                    <canvas id="severityChart"></canvas>
+                </div>
+                <div class="space-y-3 flex-1">
+                    {% set total_pred = ringan_count + sedang_count + berat_count %}
+                    {% for label, count, color in [('Ringan', ringan_count, 'bg-green-500'), ('Sedang', sedang_count, 'bg-amber-400'), ('Berat', berat_count, 'bg-red-500')] %}
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full {{ color }}"></div>
+                            <span class="text-sm text-gray-700">{{ label }}</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-semibold text-gray-900 text-sm">{{ count }}</span>
+                            {% if total_pred > 0 %}
+                            <span class="text-xs text-gray-400 ml-1">({{ ((count / total_pred) * 100)|round(1) }}%)</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent examinations -->
+    <div class="bg-white rounded-xl border border-gray-200">
+        <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+            <div class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-gray-500"></i>
+                <h2 class="font-semibold text-gray-900 text-sm">Pemeriksaan Terbaru</h2>
+            </div>
+            <a href="{{ url_for('examinations.index') }}" class="text-green-600 text-sm hover:underline">Lihat Semua</a>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-gray-100 text-gray-500 text-xs">
+                        <th class="text-left px-5 py-3 font-medium">ID</th>
+                        <th class="text-left px-5 py-3 font-medium">Pasien</th>
+                        <th class="text-left px-5 py-3 font-medium">Tanggal</th>
+                        <th class="text-left px-5 py-3 font-medium">Hasil Model</th>
+                        <th class="text-left px-5 py-3 font-medium">Status</th>
+                        <th class="text-left px-5 py-3 font-medium"></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    {% for exam in recent_examinations %}
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-5 py-3 font-mono text-gray-500">#{{ exam.id }}</td>
+                        <td class="px-5 py-3">
+                            <span class="font-medium">{{ exam.patient.initials }}</span>
+                            <span class="text-gray-400 ml-1 text-xs">{{ exam.patient.patient_code }}</span>
+                        </td>
+                        <td class="px-5 py-3 text-gray-500">{{ exam.examination_date.strftime('%d %b %Y') if exam.examination_date else '-' }}</td>
+                        <td class="px-5 py-3">
+                            {% if exam.prediction %}
+                            {% set cls = exam.prediction.predicted_class %}
+                            {% set badge = {'Ringan': 'bg-green-100 text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat': 'bg-red-100 text-red-700'} %}
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium {{ badge.get(cls, 'bg-gray-100 text-gray-600') }}">{{ cls }}</span>
+                            {% else %}
+                            <span class="text-gray-400 text-xs">Belum ada</span>
+                            {% endif %}
+                        </td>
+                        <td class="px-5 py-3">
+                            {% set status_map = {'draft': ('bg-gray-100 text-gray-600', 'Draft'), 'waiting_validation': ('bg-blue-100 text-blue-700', 'Menunggu Dokter'), 'validated': ('bg-green-100 text-green-700', 'Tervalidasi'), 'cancelled': ('bg-red-100 text-red-700', 'Dibatalkan')} %}
+                            {% set s_class, s_label = status_map.get(exam.status, ('bg-gray-100 text-gray-600', exam.status)) %}
+                            <span class="inline-flex px-2 py-0.5 rounded-md text-xs font-medium {{ s_class }}">{{ s_label }}</span>
+                        </td>
+                        <td class="px-5 py-3">
+                            <a href="{{ url_for('examinations.detail', exam_id=exam.id) }}" class="text-green-600 hover:text-green-700 text-xs font-medium">Detail →</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="6" class="px-5 py-8 text-center text-gray-400 text-sm">Belum ada pemeriksaan</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const ctx = document.getElementById('severityChart');
+if (ctx) {
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Ringan', 'Sedang', 'Berat'],
+            datasets: [{
+                data: [{{ ringan_count }}, {{ sedang_count }}, {{ berat_count }}],
+                backgroundColor: ['#22c55e', '#f59e0b', '#ef4444'],
+                borderWidth: 0,
+            }]
+        },
+        options: {
+            cutout: '70%',
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}` } } },
+        }
+    });
+}
+</script>
+{% endblock %}

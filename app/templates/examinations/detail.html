@@ -1,0 +1,611 @@
+{% extends "layouts/app.html" %} {% block title %} Detail Pemeriksaan #{{
+examination.id }} {% endblock %} {% block breadcrumb %}
+<a
+  href="{{ url_for('examinations.index') }}"
+  class="text-gray-400 hover:text-gray-600"
+>
+  Pemeriksaan
+</a>
+<span class="mx-1 text-gray-400">›</span>
+<span class="font-medium text-gray-900"> Detail #{{ examination.id }} </span>
+{% endblock %} {% block content %} {% set prediction = examination.prediction %}
+{% set validation = prediction.clinical_validation if prediction else none %} {%
+set status_config = { 'draft': { 'label': 'Draft', 'class': 'bg-gray-100
+text-gray-700 border-gray-200', 'icon': 'file-edit' }, 'waiting_validation': {
+'label': 'Menunggu Validasi', 'class': 'bg-blue-100 text-blue-700
+border-blue-200', 'icon': 'clock' }, 'validated': { 'label': 'Tervalidasi',
+'class': 'bg-green-100 text-green-700 border-green-200', 'icon': 'badge-check'
+}, 'cancelled': { 'label': 'Dibatalkan', 'class': 'bg-red-100 text-red-700
+border-red-200', 'icon': 'x-circle' } } %} {% set current_status =
+status_config.get( examination.status, { 'label': examination.status, 'class':
+'bg-gray-100 text-gray-700 border-gray-200', 'icon': 'help-circle' } ) %}
+
+<div class="mx-auto max-w-6xl space-y-5">
+  <!-- Header -->
+  <div
+    class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div>
+      <div class="flex flex-wrap items-center gap-3">
+        <h1 class="text-2xl font-bold text-gray-900">Detail Pemeriksaan</h1>
+
+        <span
+          class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium {{ current_status.class }}"
+        >
+          <i data-lucide="{{ current_status.icon }}" class="h-3.5 w-3.5"></i>
+          {{ current_status.label }}
+        </span>
+      </div>
+
+      <p class="mt-1 text-sm text-gray-500">
+        Pemeriksaan #{{ examination.id }}
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-2">
+      <a
+        href="{{ url_for('examinations.index') }}"
+        class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+      >
+        <i data-lucide="arrow-left" class="h-4 w-4"></i>
+        Kembali
+      </a>
+
+      {% if examination.status == 'draft' and (current_user.is_administrator or
+      current_user.is_perawat) %}
+      <a
+        href="{{ url_for('examinations.edit', exam_id=examination.id) }}"
+        class="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+      >
+        <i data-lucide="pencil" class="h-4 w-4"></i>
+        Lanjutkan
+      </a>
+      {% endif %} {% if examination.status == 'waiting_validation' and
+      (current_user.is_administrator or current_user.is_dokter) %}
+      <a
+        href="{{ url_for('validations.validate', exam_id=examination.id) }}"
+        class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+      >
+        <i data-lucide="check-circle" class="h-4 w-4"></i>
+        Validasi
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Summary cards -->
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-xl border border-gray-200 bg-white p-4">
+      <div class="flex items-center gap-3">
+        <div class="rounded-lg bg-green-50 p-2 text-green-600">
+          <i data-lucide="hash" class="h-5 w-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">ID Pemeriksaan</p>
+          <p class="font-semibold text-gray-900">#{{ examination.id }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-gray-200 bg-white p-4">
+      <div class="flex items-center gap-3">
+        <div class="rounded-lg bg-blue-50 p-2 text-blue-600">
+          <i data-lucide="calendar" class="h-5 w-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Tanggal Pemeriksaan</p>
+          <p class="font-semibold text-gray-900">
+            {% if examination.examination_date %} {{
+            examination.examination_date.strftime('%d %b %Y') }} {% else %} - {%
+            endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-gray-200 bg-white p-4">
+      <div class="flex items-center gap-3">
+        <div class="rounded-lg bg-purple-50 p-2 text-purple-600">
+          <i data-lucide="user" class="h-5 w-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Pasien</p>
+          <p class="font-semibold text-gray-900">
+            {{ examination.patient.initials if examination.patient else '-' }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-gray-200 bg-white p-4">
+      <div class="flex items-center gap-3">
+        <div class="rounded-lg bg-amber-50 p-2 text-amber-600">
+          <i data-lucide="brain-circuit" class="h-5 w-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Hasil Model</p>
+          <p class="font-semibold text-gray-900">
+            {{ prediction.predicted_class if prediction else '-' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid gap-5 lg:grid-cols-3">
+    <!-- Main column -->
+    <div class="space-y-5 lg:col-span-2">
+      <!-- Patient information -->
+      <section class="rounded-xl border border-gray-200 bg-white">
+        <div class="flex items-center gap-2 border-b border-gray-100 px-5 py-4">
+          <i data-lucide="user-round" class="h-5 w-5 text-green-600"></i>
+          <h2 class="font-semibold text-gray-900">Informasi Pasien</h2>
+        </div>
+
+        <div class="grid gap-5 p-5 sm:grid-cols-2">
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Inisial
+            </p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {{ examination.patient.initials if examination.patient else '-' }}
+            </p>
+          </div>
+
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Kode Pasien
+            </p>
+            <p class="mt-1 font-mono text-sm font-medium text-gray-900">
+              {{ examination.patient.patient_code if examination.patient else
+              '-' }}
+            </p>
+          </div>
+
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Jenis Kelamin
+            </p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {% if examination.patient and examination.patient.gender %} {% if
+              examination.patient.gender in ['male', 'L', 'laki-laki'] %}
+              Laki-laki {% elif examination.patient.gender in ['female', 'P',
+              'perempuan'] %} Perempuan {% else %} {{ examination.patient.gender
+              }} {% endif %} {% else %} - {% endif %}
+            </p>
+          </div>
+
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Tanggal Lahir
+            </p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {% if examination.patient and examination.patient.birth_date %} {{
+              examination.patient.birth_date.strftime('%d %b %Y') }} {% else %}
+              - {% endif %}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clinical examination information -->
+      <section class="rounded-xl border border-gray-200 bg-white">
+        <div class="flex items-center gap-2 border-b border-gray-100 px-5 py-4">
+          <i data-lucide="stethoscope" class="h-5 w-5 text-green-600"></i>
+          <h2 class="font-semibold text-gray-900">Data Pemeriksaan Klinis</h2>
+        </div>
+
+        <div class="grid gap-5 p-5 sm:grid-cols-2">
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Tanggal Pemeriksaan
+            </p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {% if examination.examination_date %} {{
+              examination.examination_date.strftime('%d %b %Y') }} {% else %} -
+              {% endif %}
+            </p>
+          </div>
+
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Status
+            </p>
+            <span
+              class="mt-1 inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs font-medium {{ current_status.class }}"
+            >
+              {{ current_status.label }}
+            </span>
+          </div>
+
+          {% if examination.created_at %}
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Dibuat Pada
+            </p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {{ examination.created_at.strftime('%d %b %Y %H:%M') }}
+            </p>
+          </div>
+          {% endif %} {% if examination.updated_at %}
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-400"
+            >
+              Terakhir Diperbarui
+            </p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {{ examination.updated_at.strftime('%d %b %Y %H:%M') }}
+            </p>
+          </div>
+          {% endif %}
+        </div>
+
+        {% if examination.clinical_data_json %}
+        <div class="border-t border-gray-100 px-5 py-5">
+          <h3 class="mb-4 text-sm font-semibold text-gray-900">
+            Parameter Klinis
+          </h3>
+
+          {% if examination.clinical_data_json is mapping %}
+          <div class="grid gap-3 sm:grid-cols-2">
+            {% for key, value in examination.clinical_data_json.items() %}
+            <div class="rounded-lg bg-gray-50 px-4 py-3">
+              <p class="text-xs text-gray-500">
+                {{ key | replace('_', ' ') | title }}
+              </p>
+              <p class="mt-1 text-sm font-medium text-gray-900">
+                {% if value is sameas true %} Ya {% elif value is sameas false
+                %} Tidak {% elif value is none or value == '' %} - {% else %} {{
+                value }} {% endif %}
+              </p>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <pre
+            class="overflow-x-auto whitespace-pre-wrap rounded-lg bg-gray-50 p-4 text-xs text-gray-700"
+          >
+{{ examination.clinical_data_json }}</pre
+          >
+          {% endif %}
+        </div>
+        {% endif %} {% if examination.notes %}
+        <div class="border-t border-gray-100 px-5 py-5">
+          <p
+            class="mb-2 text-xs font-medium uppercase tracking-wide text-gray-400"
+          >
+            Catatan Pemeriksaan
+          </p>
+          <div
+            class="rounded-lg bg-gray-50 p-4 text-sm leading-relaxed text-gray-700"
+          >
+            {{ examination.notes }}
+          </div>
+        </div>
+        {% endif %}
+      </section>
+
+      <!-- Prediction -->
+      {% if prediction %} {% set predicted_class = prediction.predicted_class %}
+      {% set prediction_config = { 'Ringan': { 'box': 'border-green-200
+      bg-green-50', 'text': 'text-green-700', 'badge': 'bg-green-100
+      text-green-700', 'bar': 'bg-green-500', 'icon': 'check-circle' },
+      'Sedang': { 'box': 'border-amber-200 bg-amber-50', 'text':
+      'text-amber-700', 'badge': 'bg-amber-100 text-amber-700', 'bar':
+      'bg-amber-500', 'icon': 'alert-circle' }, 'Berat': { 'box':
+      'border-red-200 bg-red-50', 'text': 'text-red-700', 'badge': 'bg-red-100
+      text-red-700', 'bar': 'bg-red-500', 'icon': 'alert-triangle' } } %} {% set
+      predicted_style = prediction_config.get( predicted_class, { 'box':
+      'border-gray-200 bg-gray-50', 'text': 'text-gray-700', 'badge':
+      'bg-gray-100 text-gray-700', 'bar': 'bg-gray-500', 'icon': 'help-circle' }
+      ) %}
+
+      <section class="rounded-xl border border-gray-200 bg-white">
+        <div class="flex items-center gap-2 border-b border-gray-100 px-5 py-4">
+          <i data-lucide="brain-circuit" class="h-5 w-5 text-green-600"></i>
+          <h2 class="font-semibold text-gray-900">Hasil Prediksi Model</h2>
+        </div>
+
+        <div class="p-5">
+          <div
+            class="rounded-xl border-2 p-5 text-center {{ predicted_style.box }}"
+          >
+            <i
+              data-lucide="{{ predicted_style.icon }}"
+              class="mx-auto mb-2 h-10 w-10 {{ predicted_style.text }}"
+            ></i>
+
+            <p
+              class="text-xs font-medium uppercase tracking-wide text-gray-500"
+            >
+              Klasifikasi Model
+            </p>
+
+            <p class="mt-1 text-3xl font-bold {{ predicted_style.text }}">
+              {{ predicted_class }}
+            </p>
+          </div>
+
+          <div class="mt-6 space-y-4">
+            {% set probability_data = [ ('Ringan', prediction.mild_score,
+            'bg-green-500'), ('Sedang', prediction.moderate_score,
+            'bg-amber-500'), ('Berat', prediction.severe_score, 'bg-red-500') ]
+            %} {% for label, score, bar_class in probability_data %} {% set
+            safe_score = score if score is not none else 0 %}
+            <div>
+              <div class="mb-1.5 flex items-center justify-between text-sm">
+                <span class="font-medium text-gray-700"> {{ label }} </span>
+                <span class="font-semibold text-gray-900">
+                  {{ (safe_score * 100) | round(1) }}%
+                </span>
+              </div>
+
+              <div
+                class="h-2.5 w-full overflow-hidden rounded-full bg-gray-100"
+              >
+                <div
+                  class="h-full rounded-full {{ bar_class }}"
+                  style="width: {{ (safe_score * 100) | round(1) }}%"
+                ></div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div
+            class="mt-6 grid gap-4 border-t border-gray-100 pt-5 sm:grid-cols-2"
+          >
+            <div>
+              <p class="text-xs text-gray-500">Versi Model</p>
+              <p class="mt-1 text-sm font-medium text-gray-900">
+                {% if prediction.model_version %} {{
+                prediction.model_version.version }} {% else %} - {% endif %}
+              </p>
+            </div>
+
+            <div>
+              <p class="text-xs text-gray-500">Waktu Prediksi</p>
+              <p class="mt-1 text-sm font-medium text-gray-900">
+                {% if prediction.predicted_at %} {{
+                prediction.predicted_at.strftime('%d %b %Y %H:%M') }} {% else %}
+                - {% endif %}
+              </p>
+            </div>
+          </div>
+
+          {% if prediction.warning_metadata_json %}
+          <div class="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-4">
+            <div class="flex items-start gap-2">
+              <i
+                data-lucide="alert-circle"
+                class="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-600"
+              ></i>
+              <div>
+                <p class="text-sm font-semibold text-amber-800">
+                  Peringatan Input
+                </p>
+                <p class="mt-1 whitespace-pre-wrap text-xs text-amber-700">
+                  {{ prediction.warning_metadata_json }}
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- Disclaimer -->
+      <div class="rounded-xl border border-red-200 bg-red-50 p-4">
+        <div class="flex items-start gap-3">
+          <i
+            data-lucide="shield-alert"
+            class="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600"
+          ></i>
+          <div>
+            <p class="text-sm font-semibold text-red-800">Disclaimer</p>
+            <p class="mt-1 text-xs leading-relaxed text-red-700">
+              Hasil sistem merupakan alat bantu skrining berdasarkan pola data
+              dan tidak menggantikan pemeriksaan, diagnosis, maupun keputusan
+              dokter. Model belum tervalidasi secara klinis dan hanya
+              berdasarkan pengujian dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="space-y-5">
+      <!-- Validation status -->
+      <section class="rounded-xl border border-gray-200 bg-white">
+        <div class="flex items-center gap-2 border-b border-gray-100 px-5 py-4">
+          <i data-lucide="user-check" class="h-5 w-5 text-blue-600"></i>
+          <h2 class="font-semibold text-gray-900">Validasi Klinis</h2>
+        </div>
+
+        {% if validation %}
+        <div class="space-y-4 p-5">
+          <div>
+            <p class="text-xs text-gray-500">Keputusan Dokter</p>
+
+            {% if validation.decision == 'accepted' %}
+            <span
+              class="mt-1 inline-flex items-center gap-1 rounded-md bg-green-100 px-2.5 py-1 text-xs font-medium text-green-700"
+            >
+              <i data-lucide="check" class="h-3.5 w-3.5"></i>
+              Hasil Diterima
+            </span>
+            {% else %}
+            <span
+              class="mt-1 inline-flex items-center gap-1 rounded-md bg-amber-100 px-2.5 py-1 text-xs font-medium text-amber-700"
+            >
+              <i data-lucide="pencil" class="h-3.5 w-3.5"></i>
+              Hasil Diubah
+            </span>
+            {% endif %}
+          </div>
+
+          <div>
+            <p class="text-xs text-gray-500">Kelas Final</p>
+
+            {% set final_class_config = { 'Ringan': 'bg-green-100
+            text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat':
+            'bg-red-100 text-red-700' } %}
+
+            <span
+              class="mt-1 inline-flex rounded-md px-2.5 py-1 text-xs font-semibold {{ final_class_config.get(validation.final_class, 'bg-gray-100 text-gray-700') }}"
+            >
+              {{ validation.final_class or '-' }}
+            </span>
+          </div>
+
+          {% if validation.validator %}
+          <div>
+            <p class="text-xs text-gray-500">Divalidasi Oleh</p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {{ validation.validator.name if validation.validator.name else
+              validation.validator.username }}
+            </p>
+          </div>
+          {% endif %} {% if validation.validated_at %}
+          <div>
+            <p class="text-xs text-gray-500">Waktu Validasi</p>
+            <p class="mt-1 text-sm font-medium text-gray-900">
+              {{ validation.validated_at.strftime('%d %b %Y %H:%M') }}
+            </p>
+          </div>
+          {% endif %} {% if validation.override_reason %}
+          <div>
+            <p class="text-xs text-gray-500">Alasan Perubahan</p>
+            <div class="mt-1 rounded-lg bg-gray-50 p-3 text-sm text-gray-700">
+              {{ validation.override_reason }}
+            </div>
+          </div>
+          {% endif %} {% if validation.clinical_note %}
+          <div>
+            <p class="text-xs text-gray-500">Catatan Klinis</p>
+            <div class="mt-1 rounded-lg bg-gray-50 p-3 text-sm text-gray-700">
+              {{ validation.clinical_note }}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        {% else %}
+        <div class="p-5 text-center">
+          <div
+            class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gray-100"
+          >
+            <i data-lucide="clock" class="h-6 w-6 text-gray-400"></i>
+          </div>
+
+          <p class="mt-3 text-sm font-medium text-gray-700">Belum Divalidasi</p>
+
+          <p class="mt-1 text-xs leading-relaxed text-gray-500">
+            Hasil pemeriksaan belum mendapatkan keputusan klinis dari dokter.
+          </p>
+
+          {% if examination.status == 'waiting_validation' and
+          (current_user.is_administrator or current_user.is_dokter) %}
+          <a
+            href="{{ url_for('validations.validate', exam_id=examination.id) }}"
+            class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            <i data-lucide="check-circle" class="h-4 w-4"></i>
+            Validasi Sekarang
+          </a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </section>
+
+      <!-- Timeline -->
+      <section class="rounded-xl border border-gray-200 bg-white">
+        <div class="flex items-center gap-2 border-b border-gray-100 px-5 py-4">
+          <i data-lucide="history" class="h-5 w-5 text-gray-600"></i>
+          <h2 class="font-semibold text-gray-900">Riwayat</h2>
+        </div>
+
+        <div class="p-5">
+          <div class="space-y-5">
+            <div class="relative flex gap-3">
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100"
+              >
+                <i data-lucide="file-plus" class="h-4 w-4 text-gray-600"></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-900">
+                  Pemeriksaan dibuat
+                </p>
+                <p class="mt-0.5 text-xs text-gray-500">
+                  {% if examination.created_at %} {{
+                  examination.created_at.strftime('%d %b %Y %H:%M') }} {% else
+                  %} - {% endif %}
+                </p>
+              </div>
+            </div>
+
+            {% if prediction %}
+            <div class="relative flex gap-3">
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-amber-100"
+              >
+                <i
+                  data-lucide="brain-circuit"
+                  class="h-4 w-4 text-amber-600"
+                ></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-900">
+                  Prediksi dihasilkan
+                </p>
+                <p class="mt-0.5 text-xs text-gray-500">
+                  {% if prediction.predicted_at %} {{
+                  prediction.predicted_at.strftime('%d %b %Y %H:%M') }} {% else
+                  %} - {% endif %}
+                </p>
+              </div>
+            </div>
+            {% endif %} {% if validation %}
+            <div class="relative flex gap-3">
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-100"
+              >
+                <i data-lucide="badge-check" class="h-4 w-4 text-green-600"></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-900">
+                  Pemeriksaan divalidasi
+                </p>
+                <p class="mt-0.5 text-xs text-gray-500">
+                  {% if validation.validated_at %} {{
+                  validation.validated_at.strftime('%d %b %Y %H:%M') }} {% else
+                  %} - {% endif %}
+                </p>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>
+{% endblock %}

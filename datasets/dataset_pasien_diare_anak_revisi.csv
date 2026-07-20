@@ -1,0 +1,501 @@
+﻿ID_Pasien;Umur_bulan;Jenis_Kelamin;Lama_Diare_hari;Frekuensi_BAB_per_hari;Konsistensi_Feses;Warna_Feses;Ada_Lendir;Ada_Darah;Demam;Suhu_Tubuh_C;Muntah;Tanda_Dehidrasi;Diagnosis_Klinis_Awal;Tingkat_Keparahan_Diare
+P0001;26;Perempuan;7;6;Cair;Kecoklatan;Ya;Ya;Ya;38,4;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0002;23;Laki-laki;1;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0003;44;Perempuan;12;10;Cair;Kemerahan;Ya;Ya;Ya;38,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0004;10;Laki-laki;11;14;Cair;Kecoklatan;Ya;Ya;Ya;38,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0005;43;Perempuan;3;7;Cair;Kehijauan;Ya;Ya;Ya;38,3;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0006;43;Laki-laki;3;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0007;59;Perempuan;2;4;Cair;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0008;35;Laki-laki;5;7;Cair;Kecoklatan;Ya;Tidak;Ya;38,2;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0009;20;Laki-laki;3;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0010;17;Laki-laki;1;5;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0011;49;Perempuan;5;6;Cair;Kecoklatan;Ya;Ya;Tidak;37,8;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0012;15;Perempuan;1;4;Lembek;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0013;1;Perempuan;4;7;Cair;Kecoklatan;Ya;Tidak;Ya;38,3;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0014;20;Perempuan;7;8;Cair;Kecoklatan;Ya;Ya;Ya;38,1;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0015;19;Perempuan;2;3;Lembek;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0016;12;Perempuan;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0017;45;Laki-laki;9;15;Cair;Kecoklatan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0018;17;Laki-laki;4;5;Cair;Kehijauan;Ya;Tidak;Ya;38,3;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0019;3;Laki-laki;2;5;Cair;Kuning;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0020;29;Perempuan;3;5;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0021;60;Laki-laki;3;5;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0022;22;Perempuan;7;15;Cair;Kemerahan;Ya;Ya;Ya;38,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0023;29;Perempuan;1;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0024;13;Perempuan;1;3;Cair;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0025;36;Perempuan;2;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0026;28;Laki-laki;2;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0027;39;Perempuan;2;4;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0028;22;Laki-laki;7;7;Cair;Kehijauan;Ya;Ya;Tidak;38,2;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0029;56;Laki-laki;1;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0030;60;Perempuan;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0031;7;Perempuan;1;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0032;15;Perempuan;3;5;Cair;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0033;16;Perempuan;5;8;Cair;Kecoklatan;Ya;Tidak;Tidak;38,3;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0034;44;Perempuan;1;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0035;42;Laki-laki;1;5;Cair;Kuning;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0036;32;Laki-laki;1;3;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0037;47;Laki-laki;10;13;Cair;Kemerahan;Ya;Ya;Ya;38,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0038;9;Perempuan;7;14;Cair;Kecoklatan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0039;56;Laki-laki;6;8;Cair;Kecoklatan;Ya;Ya;Ya;38,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0040;51;Perempuan;3;8;Cair;Kehijauan;Ya;Ya;Tidak;38,2;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0041;59;Perempuan;6;5;Cair;Kecoklatan;Ya;Tidak;Ya;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0042;35;Perempuan;1;4;Lembek;Kuning;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0043;56;Perempuan;2;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0044;28;Laki-laki;1;4;Cair;Kuning;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0045;25;Laki-laki;11;8;Cair;Kemerahan;Ya;Ya;Ya;39,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0046;17;Perempuan;13;11;Cair;Kemerahan;Ya;Ya;Ya;39,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0047;54;Perempuan;1;3;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0048;50;Perempuan;2;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0049;12;Laki-laki;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0050;33;Laki-laki;5;8;Cair;Kehijauan;Ya;Ya;Ya;37,6;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0051;50;Laki-laki;5;12;Cair;Kemerahan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0052;25;Perempuan;2;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0053;29;Laki-laki;2;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0054;7;Laki-laki;3;3;Cair;Kehijauan;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0055;5;Laki-laki;12;11;Cair;Kecoklatan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0056;28;Perempuan;6;7;Cair;Kehijauan;Ya;Tidak;Ya;37,9;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0057;43;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Ya;38,4;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0058;6;Laki-laki;2;4;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0059;38;Laki-laki;2;5;Lembek;Kuning;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0060;7;Perempuan;2;5;Lembek;Kuning;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0061;57;Perempuan;3;8;Cair;Kecoklatan;Ya;Tidak;Ya;38,2;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0062;59;Laki-laki;7;6;Cair;Kehijauan;Ya;Tidak;Tidak;37,8;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0063;24;Perempuan;7;12;Cair;Kemerahan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0064;35;Perempuan;8;9;Cair;Kecoklatan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0065;31;Perempuan;5;7;Cair;Kecoklatan;Ya;Ya;Tidak;38,1;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0066;46;Laki-laki;2;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0067;36;Perempuan;5;7;Cair;Kecoklatan;Ya;Ya;Tidak;38,0;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0068;27;Perempuan;3;3;Cair;Kehijauan;Ya;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0069;33;Perempuan;7;8;Cair;Kehijauan;Ya;Tidak;Ya;38,5;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0070;24;Perempuan;1;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0071;22;Perempuan;2;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0072;29;Laki-laki;3;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0073;27;Perempuan;5;7;Cair;Kecoklatan;Ya;Ya;Tidak;37,9;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0074;34;Perempuan;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0075;8;Laki-laki;3;8;Cair;Kecoklatan;Ya;Ya;Ya;37,5;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0076;39;Laki-laki;5;6;Cair;Kehijauan;Ya;Ya;Tidak;37,6;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0077;6;Laki-laki;2;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0078;50;Perempuan;4;6;Cair;Kecoklatan;Ya;Ya;Tidak;37,7;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0079;41;Perempuan;2;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0080;39;Perempuan;5;7;Cair;Kehijauan;Ya;Ya;Ya;37,5;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0081;45;Perempuan;9;11;Cair;Kemerahan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0082;17;Perempuan;1;3;Cair;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0083;10;Perempuan;7;6;Cair;Kehijauan;Ya;Tidak;Tidak;38,2;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0084;55;Perempuan;4;8;Cair;Kehijauan;Ya;Tidak;Ya;37,8;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0085;26;Perempuan;10;11;Cair;Kecoklatan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0086;27;Perempuan;3;7;Cair;Kehijauan;Ya;Tidak;Tidak;38,1;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0087;43;Laki-laki;4;7;Cair;Kecoklatan;Ya;Ya;Tidak;37,6;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0088;58;Laki-laki;3;3;Cair;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0089;23;Laki-laki;1;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0090;26;Laki-laki;4;5;Cair;Kehijauan;Ya;Ya;Tidak;37,9;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0091;60;Laki-laki;3;7;Cair;Kecoklatan;Ya;Ya;Tidak;37,6;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0092;20;Laki-laki;7;7;Cair;Kehijauan;Ya;Ya;Ya;38,4;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0093;25;Laki-laki;8;14;Cair;Kecoklatan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0094;1;Laki-laki;2;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0095;37;Perempuan;4;5;Cair;Kecoklatan;Ya;Tidak;Tidak;37,5;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0096;49;Laki-laki;10;14;Cair;Kemerahan;Ya;Ya;Ya;39,2;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0097;32;Perempuan;3;3;Lembek;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0098;50;Laki-laki;3;5;Lembek;Kuning;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0099;26;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Ya;38,1;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0100;59;Perempuan;2;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0101;15;Perempuan;2;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0102;52;Laki-laki;11;12;Cair;Kecoklatan;Ya;Ya;Ya;39,3;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0103;6;Laki-laki;2;3;Cair;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0104;40;Perempuan;5;8;Cair;Kecoklatan;Ya;Ya;Tidak;38,3;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0105;36;Perempuan;10;8;Cair;Kemerahan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0106;6;Perempuan;1;4;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0107;3;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0108;20;Perempuan;1;5;Cair;Kuning;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0109;16;Perempuan;2;3;Cair;Kuning;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0110;55;Perempuan;5;5;Cair;Kehijauan;Ya;Tidak;Tidak;38,1;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0111;44;Perempuan;1;4;Lembek;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0112;24;Laki-laki;8;8;Cair;Kemerahan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0113;28;Perempuan;1;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0114;3;Perempuan;3;7;Cair;Kecoklatan;Ya;Ya;Ya;38,1;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0115;41;Laki-laki;13;12;Cair;Kemerahan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0116;35;Perempuan;7;5;Cair;Kehijauan;Ya;Tidak;Ya;38,2;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0117;52;Laki-laki;3;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0118;38;Laki-laki;3;5;Lembek;Kuning;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0119;50;Perempuan;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0120;6;Perempuan;2;5;Cair;Kuning;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0121;19;Laki-laki;3;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0122;11;Perempuan;3;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0123;39;Laki-laki;2;3;Cair;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0124;22;Laki-laki;3;4;Cair;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0125;46;Laki-laki;3;6;Cair;Kecoklatan;Ya;Ya;Tidak;38,1;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0126;4;Perempuan;1;3;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0127;35;Perempuan;7;8;Cair;Kecoklatan;Ya;Ya;Tidak;38,3;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0128;23;Perempuan;10;11;Cair;Kemerahan;Ya;Ya;Ya;38,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0129;12;Perempuan;3;6;Cair;Kecoklatan;Ya;Tidak;Tidak;37,6;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0130;37;Laki-laki;2;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0131;9;Perempuan;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0132;15;Laki-laki;2;4;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0133;25;Laki-laki;3;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0134;9;Perempuan;10;9;Cair;Kemerahan;Ya;Ya;Ya;39,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0135;37;Perempuan;12;12;Cair;Kemerahan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0136;6;Perempuan;7;14;Cair;Kemerahan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0137;32;Perempuan;1;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0138;20;Perempuan;1;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0139;40;Perempuan;4;8;Cair;Kecoklatan;Ya;Ya;Tidak;37,7;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0140;4;Perempuan;4;8;Cair;Kehijauan;Ya;Ya;Tidak;38,4;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0141;56;Laki-laki;6;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,9;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0142;9;Perempuan;3;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0143;30;Perempuan;11;10;Cair;Kemerahan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0144;36;Perempuan;7;6;Cair;Kehijauan;Ya;Ya;Ya;37,6;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0145;6;Laki-laki;8;13;Cair;Kemerahan;Ya;Ya;Ya;38,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0146;34;Perempuan;5;7;Cair;Kehijauan;Ya;Ya;Tidak;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0147;21;Laki-laki;12;12;Cair;Kemerahan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0148;42;Perempuan;1;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0149;38;Laki-laki;8;13;Cair;Kecoklatan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0150;48;Laki-laki;3;4;Lembek;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0151;12;Laki-laki;4;7;Cair;Kehijauan;Ya;Ya;Tidak;38,5;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0152;47;Laki-laki;2;4;Lembek;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0153;21;Laki-laki;14;9;Cair;Kemerahan;Ya;Ya;Ya;40,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0154;21;Laki-laki;3;8;Cair;Kecoklatan;Ya;Tidak;Tidak;38,0;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0155;6;Perempuan;3;5;Cair;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0156;35;Perempuan;3;6;Cair;Kecoklatan;Ya;Ya;Tidak;38,4;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0157;5;Perempuan;3;4;Cair;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0158;57;Laki-laki;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0159;5;Perempuan;8;14;Cair;Kecoklatan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0160;43;Perempuan;7;6;Cair;Kecoklatan;Ya;Ya;Tidak;37,6;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0161;1;Perempuan;3;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0162;53;Perempuan;5;7;Cair;Kecoklatan;Ya;Tidak;Ya;38,3;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0163;25;Perempuan;10;15;Cair;Kemerahan;Ya;Ya;Ya;38,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0164;24;Perempuan;3;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0165;17;Perempuan;4;5;Cair;Kehijauan;Ya;Tidak;Ya;37,9;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0166;50;Perempuan;6;7;Cair;Kehijauan;Ya;Tidak;Tidak;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0167;14;Perempuan;1;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0168;33;Perempuan;9;14;Cair;Kemerahan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0169;32;Laki-laki;4;8;Cair;Kehijauan;Ya;Tidak;Ya;38,3;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0170;21;Laki-laki;11;14;Cair;Kecoklatan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0171;52;Perempuan;1;3;Cair;Kuning;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0172;42;Laki-laki;2;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0173;52;Laki-laki;3;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0174;25;Perempuan;1;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0175;9;Laki-laki;1;4;Cair;Kuning;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0176;60;Laki-laki;3;3;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0177;45;Laki-laki;1;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0178;17;Laki-laki;3;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0179;14;Laki-laki;1;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0180;47;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Tidak;38,5;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0181;12;Laki-laki;11;11;Cair;Kemerahan;Ya;Ya;Ya;39,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0182;4;Laki-laki;3;3;Cair;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0183;4;Perempuan;1;5;Cair;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0184;28;Perempuan;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0185;9;Laki-laki;7;6;Cair;Kecoklatan;Ya;Tidak;Tidak;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0186;27;Laki-laki;4;8;Cair;Kehijauan;Ya;Tidak;Tidak;37,8;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0187;35;Perempuan;5;11;Cair;Kecoklatan;Ya;Ya;Ya;38,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0188;20;Laki-laki;3;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0189;24;Perempuan;1;3;Cair;Kuning;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0190;51;Perempuan;6;8;Cair;Kecoklatan;Ya;Ya;Tidak;38,1;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0191;56;Laki-laki;5;6;Cair;Kecoklatan;Ya;Tidak;Tidak;37,8;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0192;13;Laki-laki;4;7;Cair;Kehijauan;Ya;Ya;Ya;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0193;1;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0194;25;Perempuan;7;8;Cair;Kehijauan;Ya;Tidak;Tidak;38,4;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0195;2;Laki-laki;2;3;Cair;Kuning;Ya;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0196;17;Perempuan;3;4;Lembek;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0197;7;Perempuan;5;12;Cair;Kecoklatan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0198;42;Laki-laki;14;9;Cair;Kecoklatan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0199;16;Laki-laki;13;10;Cair;Kecoklatan;Ya;Ya;Ya;38,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0200;24;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0201;40;Perempuan;5;10;Cair;Kemerahan;Ya;Ya;Ya;40,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0202;22;Perempuan;5;8;Cair;Kehijauan;Ya;Tidak;Tidak;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0203;31;Perempuan;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0204;40;Laki-laki;14;10;Cair;Kemerahan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0205;21;Perempuan;3;4;Cair;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0206;2;Perempuan;11;14;Cair;Kecoklatan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0207;19;Laki-laki;2;5;Cair;Kuning;Tidak;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0208;60;Laki-laki;1;3;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0209;30;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0210;9;Laki-laki;10;14;Cair;Kemerahan;Ya;Ya;Ya;39,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0211;30;Laki-laki;6;14;Cair;Kecoklatan;Ya;Ya;Ya;40,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0212;54;Perempuan;3;3;Lembek;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0213;39;Perempuan;1;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0214;32;Laki-laki;8;9;Cair;Kecoklatan;Ya;Ya;Ya;38,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0215;11;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Tidak;37,7;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0216;7;Perempuan;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0217;31;Laki-laki;5;6;Cair;Kecoklatan;Ya;Tidak;Ya;37,9;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0218;24;Laki-laki;3;5;Cair;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0219;34;Perempuan;3;3;Cair;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0220;40;Perempuan;1;5;Cair;Kuning;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0221;29;Perempuan;3;8;Cair;Kehijauan;Ya;Ya;Tidak;38,3;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0222;13;Laki-laki;4;6;Cair;Kecoklatan;Ya;Ya;Tidak;38,3;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0223;31;Perempuan;6;8;Cair;Kecoklatan;Ya;Tidak;Tidak;37,7;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0224;32;Laki-laki;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0225;10;Perempuan;2;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0226;50;Laki-laki;5;8;Cair;Kehijauan;Ya;Ya;Tidak;38,3;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0227;15;Perempuan;11;14;Cair;Kemerahan;Ya;Ya;Ya;38,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0228;46;Laki-laki;1;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0229;40;Perempuan;3;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0230;19;Laki-laki;4;8;Cair;Kehijauan;Ya;Tidak;Tidak;38,1;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0231;28;Perempuan;6;8;Cair;Kecoklatan;Ya;Ya;Tidak;38,5;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0232;29;Perempuan;9;11;Cair;Kecoklatan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0233;19;Laki-laki;1;4;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0234;54;Laki-laki;4;8;Cair;Kecoklatan;Ya;Tidak;Ya;38,3;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0235;55;Perempuan;2;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0236;16;Laki-laki;3;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0237;27;Perempuan;11;12;Cair;Kemerahan;Ya;Ya;Ya;38,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0238;31;Perempuan;5;5;Cair;Kecoklatan;Ya;Ya;Tidak;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0239;29;Perempuan;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0240;29;Laki-laki;13;11;Cair;Kemerahan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0241;53;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0242;46;Laki-laki;1;5;Cair;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0243;53;Perempuan;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0244;54;Laki-laki;3;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0245;6;Laki-laki;3;5;Lembek;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0246;36;Perempuan;6;7;Cair;Kehijauan;Ya;Ya;Tidak;37,7;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0247;22;Laki-laki;3;3;Cair;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0248;38;Perempuan;2;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0249;14;Laki-laki;6;8;Cair;Kehijauan;Ya;Tidak;Ya;37,7;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0250;1;Perempuan;2;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0251;17;Perempuan;13;9;Cair;Kemerahan;Ya;Ya;Ya;39,2;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0252;40;Laki-laki;8;11;Cair;Kemerahan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0253;18;Laki-laki;3;6;Cair;Kehijauan;Ya;Tidak;Tidak;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0254;35;Laki-laki;2;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0255;39;Laki-laki;1;3;Cair;Kuning;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0256;37;Laki-laki;3;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0257;44;Perempuan;1;3;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0258;23;Perempuan;3;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0259;22;Perempuan;3;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0260;50;Laki-laki;2;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0261;21;Perempuan;4;5;Cair;Kecoklatan;Ya;Ya;Ya;38,2;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0262;60;Laki-laki;5;8;Cair;Kecoklatan;Ya;Ya;Tidak;38,4;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0263;3;Perempuan;2;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0264;58;Laki-laki;5;9;Cair;Kemerahan;Ya;Ya;Ya;39,2;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0265;1;Perempuan;5;5;Cair;Kehijauan;Ya;Ya;Ya;37,6;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0266;2;Laki-laki;1;3;Cair;Kuning;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0267;56;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Ya;37,6;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0268;4;Perempuan;3;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0269;4;Perempuan;2;5;Lembek;Kuning;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0270;57;Laki-laki;7;8;Cair;Kecoklatan;Ya;Tidak;Ya;38,4;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0271;58;Perempuan;5;5;Cair;Kecoklatan;Ya;Tidak;Ya;37,9;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0272;48;Laki-laki;1;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0273;19;Laki-laki;2;5;Lembek;Kehijauan;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0274;55;Perempuan;1;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0275;30;Laki-laki;3;3;Lembek;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0276;46;Laki-laki;1;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0277;24;Perempuan;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0278;10;Perempuan;13;11;Cair;Kemerahan;Ya;Ya;Ya;39,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0279;3;Perempuan;6;10;Cair;Kemerahan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0280;4;Laki-laki;7;7;Cair;Kehijauan;Ya;Tidak;Tidak;38,0;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0281;32;Perempuan;2;3;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0282;32;Perempuan;4;8;Cair;Kehijauan;Ya;Tidak;Ya;37,7;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0283;6;Perempuan;3;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0284;26;Perempuan;2;5;Lembek;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0285;34;Perempuan;10;13;Cair;Kemerahan;Ya;Ya;Ya;39,2;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0286;41;Laki-laki;3;5;Lembek;Kuning;Tidak;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0287;14;Laki-laki;14;10;Cair;Kecoklatan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0288;42;Laki-laki;3;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0289;33;Laki-laki;5;8;Cair;Kecoklatan;Ya;Tidak;Ya;38,2;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0290;10;Laki-laki;2;3;Lembek;Kuning;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0291;6;Perempuan;3;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0292;56;Perempuan;2;5;Lembek;Kehijauan;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0293;12;Perempuan;9;8;Cair;Kecoklatan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0294;18;Laki-laki;2;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0295;54;Perempuan;8;10;Cair;Kecoklatan;Ya;Ya;Ya;39,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0296;32;Perempuan;10;12;Cair;Kemerahan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0297;9;Laki-laki;2;5;Cair;Kuning;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0298;60;Laki-laki;5;6;Cair;Kecoklatan;Ya;Tidak;Ya;37,5;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0299;29;Perempuan;1;5;Lembek;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0300;29;Laki-laki;5;8;Cair;Kecoklatan;Ya;Tidak;Ya;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0301;47;Perempuan;11;10;Cair;Kemerahan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0302;10;Laki-laki;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0303;31;Perempuan;1;5;Cair;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0304;43;Perempuan;7;5;Cair;Kehijauan;Ya;Ya;Ya;37,9;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0305;46;Laki-laki;3;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0306;18;Laki-laki;1;3;Lembek;Kuning;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0307;38;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0308;8;Laki-laki;6;14;Cair;Kecoklatan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0309;11;Laki-laki;3;5;Cair;Kuning;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0310;59;Perempuan;3;5;Cair;Kuning;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0311;12;Laki-laki;3;4;Cair;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0312;38;Laki-laki;8;12;Cair;Kecoklatan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0313;7;Laki-laki;13;14;Cair;Kecoklatan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0314;45;Laki-laki;1;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0315;26;Perempuan;6;7;Cair;Kehijauan;Ya;Ya;Tidak;37,6;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0316;54;Laki-laki;5;7;Cair;Kehijauan;Ya;Tidak;Tidak;38,2;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0317;43;Perempuan;6;5;Cair;Kecoklatan;Ya;Ya;Ya;37,5;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0318;23;Perempuan;1;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0319;41;Perempuan;4;7;Cair;Kehijauan;Ya;Ya;Ya;38,5;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0320;17;Perempuan;6;12;Cair;Kemerahan;Ya;Ya;Ya;39,2;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0321;48;Laki-laki;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0322;45;Laki-laki;1;5;Lembek;Kuning;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0323;1;Perempuan;4;5;Cair;Kehijauan;Ya;Ya;Tidak;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0324;10;Perempuan;4;7;Cair;Kehijauan;Ya;Ya;Ya;38,0;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0325;24;Laki-laki;7;12;Cair;Kemerahan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0326;35;Perempuan;2;3;Cair;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0327;39;Laki-laki;13;8;Cair;Kemerahan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0328;5;Laki-laki;1;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0329;51;Perempuan;3;5;Cair;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0330;48;Laki-laki;3;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0331;27;Laki-laki;4;5;Cair;Kecoklatan;Ya;Ya;Ya;37,9;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0332;55;Laki-laki;3;8;Cair;Kehijauan;Ya;Tidak;Tidak;38,2;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0333;50;Laki-laki;2;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0334;49;Perempuan;3;7;Cair;Kecoklatan;Ya;Tidak;Tidak;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0335;41;Laki-laki;4;7;Cair;Kecoklatan;Ya;Ya;Ya;37,6;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0336;4;Laki-laki;1;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0337;42;Laki-laki;3;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0338;47;Laki-laki;2;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0339;56;Perempuan;3;4;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0340;4;Laki-laki;4;5;Cair;Kecoklatan;Ya;Tidak;Ya;38,1;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0341;9;Laki-laki;3;5;Cair;Kehijauan;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0342;60;Perempuan;10;9;Cair;Kecoklatan;Ya;Ya;Ya;40,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0343;1;Perempuan;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0344;56;Laki-laki;4;5;Cair;Kehijauan;Ya;Ya;Ya;37,5;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0345;16;Laki-laki;6;6;Cair;Kehijauan;Ya;Ya;Ya;38,3;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0346;14;Laki-laki;1;3;Cair;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0347;26;Perempuan;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0348;34;Laki-laki;11;8;Cair;Kecoklatan;Ya;Ya;Ya;39,5;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0349;48;Perempuan;1;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0350;32;Perempuan;4;8;Cair;Kecoklatan;Ya;Tidak;Ya;38,4;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0351;43;Perempuan;5;5;Cair;Kecoklatan;Ya;Ya;Tidak;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0352;17;Laki-laki;6;5;Cair;Kehijauan;Ya;Tidak;Tidak;38,5;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0353;3;Perempuan;1;4;Cair;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0354;55;Laki-laki;4;6;Cair;Kecoklatan;Ya;Tidak;Tidak;37,9;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0355;53;Perempuan;2;3;Cair;Kehijauan;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0356;48;Laki-laki;2;3;Lembek;Kuning;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0357;55;Perempuan;1;4;Lembek;Kehijauan;Ya;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0358;29;Laki-laki;3;7;Cair;Kecoklatan;Ya;Tidak;Tidak;37,9;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0359;6;Laki-laki;2;4;Cair;Kuning;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0360;35;Perempuan;2;4;Lembek;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0361;56;Perempuan;1;5;Cair;Kehijauan;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0362;52;Laki-laki;3;5;Cair;Kuning;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0363;35;Perempuan;3;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0364;56;Perempuan;4;6;Cair;Kehijauan;Ya;Ya;Ya;38,5;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0365;56;Laki-laki;7;5;Cair;Kehijauan;Ya;Ya;Tidak;38,2;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0366;5;Perempuan;7;6;Cair;Kehijauan;Ya;Tidak;Ya;37,7;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0367;24;Laki-laki;5;14;Cair;Kecoklatan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0368;53;Laki-laki;1;3;Lembek;Kehijauan;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0369;30;Laki-laki;8;15;Cair;Kemerahan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0370;31;Perempuan;3;3;Cair;Kuning;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0371;31;Laki-laki;2;5;Lembek;Kuning;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0372;44;Laki-laki;2;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0373;27;Perempuan;11;13;Cair;Kecoklatan;Ya;Ya;Ya;40,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0374;21;Perempuan;3;8;Cair;Kehijauan;Ya;Tidak;Tidak;38,2;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0375;6;Perempuan;3;4;Cair;Kuning;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0376;59;Perempuan;1;3;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0377;6;Laki-laki;2;4;Lembek;Kuning;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0378;36;Perempuan;5;6;Cair;Kehijauan;Ya;Ya;Ya;38,4;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0379;26;Laki-laki;1;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0380;31;Perempuan;2;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0381;6;Laki-laki;3;4;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0382;33;Laki-laki;9;15;Cair;Kemerahan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0383;24;Perempuan;5;7;Cair;Kehijauan;Ya;Tidak;Tidak;38,5;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0384;32;Laki-laki;10;13;Cair;Kemerahan;Ya;Ya;Ya;39,3;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0385;46;Laki-laki;7;5;Cair;Kecoklatan;Ya;Tidak;Ya;37,7;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0386;19;Laki-laki;14;15;Cair;Kemerahan;Ya;Ya;Ya;39,1;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0387;10;Laki-laki;7;6;Cair;Kecoklatan;Ya;Ya;Tidak;38,3;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0388;48;Laki-laki;7;9;Cair;Kemerahan;Ya;Ya;Ya;38,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0389;35;Laki-laki;8;12;Cair;Kemerahan;Ya;Ya;Ya;38,8;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0390;59;Perempuan;2;4;Lembek;Kehijauan;Ya;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0391;43;Perempuan;3;6;Cair;Kecoklatan;Ya;Tidak;Tidak;37,8;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0392;16;Perempuan;4;7;Cair;Kecoklatan;Ya;Tidak;Tidak;38,2;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0393;56;Laki-laki;11;9;Cair;Kemerahan;Ya;Ya;Ya;39,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0394;25;Perempuan;7;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,6;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0395;49;Laki-laki;1;3;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0396;60;Perempuan;2;3;Cair;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0397;34;Laki-laki;4;6;Cair;Kehijauan;Ya;Tidak;Ya;37,6;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0398;18;Perempuan;1;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0399;29;Perempuan;7;8;Cair;Kecoklatan;Ya;Ya;Ya;38,2;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0400;51;Perempuan;1;4;Cair;Kuning;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0401;59;Laki-laki;3;3;Cair;Kehijauan;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0402;14;Laki-laki;1;3;Cair;Kehijauan;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0403;34;Laki-laki;12;9;Cair;Kecoklatan;Ya;Ya;Ya;39,2;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0404;59;Laki-laki;3;3;Lembek;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0405;7;Perempuan;6;9;Cair;Kecoklatan;Ya;Ya;Ya;38,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0406;58;Perempuan;3;5;Lembek;Kuning;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0407;22;Perempuan;3;5;Lembek;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0408;16;Laki-laki;1;5;Lembek;Kuning;Ya;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0409;34;Perempuan;1;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0410;46;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Ya;38,2;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0411;55;Perempuan;1;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0412;11;Perempuan;3;5;Cair;Kuning;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0413;47;Perempuan;1;4;Cair;Kehijauan;Ya;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0414;43;Laki-laki;4;7;Cair;Kecoklatan;Ya;Tidak;Tidak;37,5;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0415;24;Perempuan;2;4;Cair;Kuning;Tidak;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0416;17;Laki-laki;1;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0417;38;Perempuan;1;4;Lembek;Kehijauan;Ya;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0418;44;Perempuan;8;12;Cair;Kecoklatan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0419;35;Perempuan;8;15;Cair;Kemerahan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0420;33;Laki-laki;1;4;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0421;51;Laki-laki;14;9;Cair;Kemerahan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0422;40;Laki-laki;7;8;Cair;Kecoklatan;Ya;Tidak;Tidak;38,0;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0423;55;Laki-laki;7;5;Cair;Kecoklatan;Ya;Tidak;Tidak;37,9;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0424;1;Laki-laki;5;8;Cair;Kehijauan;Ya;Tidak;Ya;38,4;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0425;17;Perempuan;11;13;Cair;Kemerahan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0426;22;Perempuan;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0427;19;Perempuan;2;4;Lembek;Kuning;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0428;8;Perempuan;4;6;Cair;Kecoklatan;Ya;Ya;Ya;38,3;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0429;43;Perempuan;6;8;Cair;Kecoklatan;Ya;Tidak;Tidak;37,6;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0430;1;Laki-laki;3;3;Cair;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0431;19;Laki-laki;2;4;Cair;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0432;30;Perempuan;3;5;Cair;Kehijauan;Ya;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0433;17;Laki-laki;1;3;Cair;Kehijauan;Ya;Tidak;Tidak;36,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0434;56;Perempuan;13;15;Cair;Kemerahan;Ya;Ya;Ya;38,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0435;30;Perempuan;2;4;Cair;Kuning;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0436;10;Laki-laki;5;12;Cair;Kemerahan;Ya;Ya;Ya;39,3;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0437;44;Laki-laki;2;3;Cair;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0438;29;Perempuan;3;8;Cair;Kehijauan;Ya;Tidak;Ya;38,0;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0439;15;Perempuan;4;7;Cair;Kehijauan;Ya;Tidak;Tidak;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0440;25;Laki-laki;2;4;Lembek;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0441;42;Laki-laki;2;5;Cair;Kuning;Tidak;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0442;58;Perempuan;1;5;Cair;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0443;48;Laki-laki;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0444;39;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Ya;38,3;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0445;26;Perempuan;3;5;Cair;Kecoklatan;Ya;Tidak;Ya;38,1;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0446;45;Laki-laki;10;11;Cair;Kecoklatan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0447;35;Perempuan;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,2;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0448;11;Laki-laki;2;5;Lembek;Kuning;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0449;28;Laki-laki;13;10;Cair;Kemerahan;Ya;Ya;Ya;39,4;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0450;29;Laki-laki;2;3;Lembek;Kuning;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0451;52;Perempuan;5;9;Cair;Kemerahan;Ya;Ya;Ya;39,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0452;57;Perempuan;3;4;Cair;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0453;8;Perempuan;3;4;Cair;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0454;49;Laki-laki;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0455;22;Laki-laki;2;5;Cair;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0456;41;Perempuan;1;3;Lembek;Kuning;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0457;37;Laki-laki;2;5;Lembek;Kuning;Tidak;Tidak;Tidak;36,6;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0458;20;Laki-laki;8;9;Cair;Kemerahan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0459;9;Perempuan;7;6;Cair;Kehijauan;Ya;Tidak;Ya;38,0;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0460;15;Laki-laki;7;14;Cair;Kemerahan;Ya;Ya;Ya;39,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0461;43;Perempuan;4;6;Cair;Kecoklatan;Ya;Tidak;Ya;37,8;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0462;9;Laki-laki;2;4;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0463;20;Perempuan;3;5;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0464;57;Perempuan;5;8;Cair;Kecoklatan;Ya;Ya;Tidak;38,1;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0465;54;Perempuan;2;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0466;35;Laki-laki;6;8;Cair;Kecoklatan;Ya;Ya;Tidak;37,9;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0467;33;Perempuan;8;14;Cair;Kecoklatan;Ya;Ya;Ya;39,9;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0468;56;Laki-laki;3;5;Cair;Kehijauan;Ya;Ya;Tidak;37,7;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0469;23;Perempuan;9;13;Cair;Kecoklatan;Ya;Ya;Ya;40,0;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0470;13;Perempuan;2;3;Cair;Kuning;Ya;Tidak;Tidak;37,3;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0471;60;Perempuan;10;13;Cair;Kemerahan;Ya;Ya;Ya;39,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0472;24;Laki-laki;5;5;Cair;Kecoklatan;Ya;Ya;Ya;37,7;Tidak;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0473;27;Laki-laki;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0474;46;Laki-laki;3;4;Cair;Kehijauan;Ya;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0475;51;Laki-laki;7;7;Cair;Kecoklatan;Ya;Ya;Tidak;38,4;Ya;Sedang;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0476;17;Perempuan;1;5;Lembek;Kehijauan;Tidak;Tidak;Tidak;37,4;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0477;37;Laki-laki;4;7;Cair;Kehijauan;Ya;Ya;Ya;38,3;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0478;55;Laki-laki;3;5;Cair;Kehijauan;Ya;Tidak;Tidak;37,7;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0479;56;Laki-laki;11;13;Cair;Kecoklatan;Ya;Ya;Ya;39,7;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0480;28;Laki-laki;6;6;Cair;Kehijauan;Ya;Ya;Ya;37,9;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0481;44;Perempuan;3;5;Lembek;Kuning;Ya;Tidak;Tidak;37,5;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0482;46;Laki-laki;3;4;Lembek;Kuning;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0483;44;Laki-laki;3;4;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0484;51;Laki-laki;5;8;Cair;Kecoklatan;Ya;Tidak;Ya;37,6;Ya;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0485;33;Perempuan;1;5;Cair;Kehijauan;Tidak;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0486;60;Laki-laki;1;5;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0487;12;Perempuan;3;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,9;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0488;23;Perempuan;1;3;Lembek;Kuning;Tidak;Tidak;Tidak;37,0;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0489;37;Perempuan;13;13;Cair;Kemerahan;Ya;Ya;Ya;38,6;Ya;Berat;Diare Akut Dehidrasi Berat;Berat
+P0490;26;Perempuan;2;5;Cair;Kuning;Ya;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0491;35;Laki-laki;7;6;Cair;Kecoklatan;Ya;Ya;Tidak;37,6;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0492;17;Perempuan;3;7;Cair;Kehijauan;Ya;Tidak;Ya;38,0;Tidak;Ringan;Diare Akut Dehidrasi Ringan-Sedang;Sedang
+P0493;2;Perempuan;3;3;Lembek;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0494;43;Laki-laki;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0495;36;Laki-laki;1;5;Lembek;Kuning;Ya;Tidak;Tidak;37,1;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0496;53;Perempuan;1;5;Lembek;Kuning;Tidak;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0497;54;Laki-laki;1;3;Lembek;Kuning;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0498;16;Laki-laki;2;5;Cair;Kehijauan;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0499;1;Laki-laki;3;5;Cair;Kehijauan;Tidak;Tidak;Tidak;36,8;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan
+P0500;45;Laki-laki;3;3;Lembek;Kuning;Ya;Tidak;Tidak;36,7;Tidak;Tidak Ada;Diare Akut Tanpa Dehidrasi;Ringan

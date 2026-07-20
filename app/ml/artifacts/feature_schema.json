@@ -1,0 +1,32 @@
+{
+  "features": [
+    "Umur_bulan",
+    "Jenis_Kelamin",
+    "Lama_Diare_hari",
+    "Frekuensi_BAB_per_hari",
+    "Konsistensi_Feses",
+    "Warna_Feses",
+    "Ada_Lendir",
+    "Ada_Darah",
+    "Demam",
+    "Suhu_Tubuh_C",
+    "Muntah",
+    "Tanda_Dehidrasi"
+  ],
+  "numeric_features": [
+    "Umur_bulan",
+    "Lama_Diare_hari",
+    "Frekuensi_BAB_per_hari",
+    "Suhu_Tubuh_C"
+  ],
+  "categorical_features": [
+    "Jenis_Kelamin",
+    "Konsistensi_Feses",
+    "Warna_Feses",
+    "Ada_Lendir",
+    "Ada_Darah",
+    "Demam",
+    "Muntah",
+    "Tanda_Dehidrasi"
+  ]
+}

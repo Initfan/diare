@@ -1,0 +1,61 @@
+Ran command: `cd C:\Users\HP\.gemini\antigravity-ide\scratch\diarrhea-detection-app
+`
+Listed directory diarrhea-detection-app
+Viewed README.md:1-97
+
+Untuk menjalankan project **Sistem Deteksi Dini Tingkat Keparahan Diare Anak** ini, Anda bisa mengikuti langkah-langkah instalasi dan konfigurasi berikut dari terminal/Command Prompt Anda, pastikan Anda berada di direktori project (`c:\Users\HP\.gemini\antigravity-ide\scratch\diarrhea-detection-app`):
+
+### 1. Persiapan Environment (Virtual Environment)
+Sangat disarankan menggunakan virtual environment agar dependensi project ini tidak bentrok dengan project Python lainnya. Jalankan perintah berikut:
+```bash
+python -m venv venv
+```
+Kemudian aktifkan virtual environment (Untuk Windows):
+```bash
+venv\Scripts\activate
+```
+
+### 2. Instalasi Dependensi
+Setelah virtual environment aktif (biasanya ditandai dengan awalan `(venv)` di terminal), install semua library yang dibutuhkan:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Konfigurasi Environment
+Buat file konfigurasi environment lokal dengan menyalin template yang sudah disediakan. Jalankan perintah ini di Windows:
+```bash
+copy .env.example .env
+```
+*(File `.env` ini secara default akan menggunakan mode `development` dan database `SQLite`)*
+
+### 4. Inisialisasi Database
+Jalankan perintah migrasi untuk membuat tabel-tabel yang diperlukan di database:
+```bash
+flask db upgrade
+```
+
+### 5. Generate Data Awal & Latih Model Machine Learning
+Jalankan beberapa script berikut secara berurutan untuk mengisi database dengan mock data (data buatan awal), membuat akun default, dan melatih model deteksi Naïve Bayes:
+```bash
+python scripts/generate_mock_dataset.py
+python scripts/seed.py
+python scripts/train_model.py
+```
+
+### 6. Menjalankan Aplikasi
+Setelah semuanya siap, Anda dapat menjalankan server aplikasinya:
+```bash
+python run.py
+```
+
+Aplikasi akan berjalan dan bisa Anda akses melalui web browser di alamat:
+**http://127.0.0.1:5000**
+
+### 🔐 Akun Default untuk Login
+Anda bisa mencoba masuk menggunakan salah satu akun yang telah dibuat secara otomatis:
+- **Admin**: Username: `admin` | Password: `Admin1234!`
+- **Dokter**: Username: `dokter1` | Password: `Dokter1234!`
+- **Perawat**: Username: `perawat1` | Password: `Perawat1234!`
+- **Administrasi**: Username: `admin_rina` | Password: `Rina1234!`
+
+Beri tahu saya jika Anda ingin saya langsung mengeksekusi perintah-perintah tersebut di terminal Anda!

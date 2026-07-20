@@ -1,0 +1,84 @@
+{% extends "layouts/app.html" %}
+{% block title %}Detail Pasien - {{ patient.initials }}{% endblock %}
+{% block breadcrumb %}<a href="{{ url_for('patients.index') }}" class="text-gray-400 hover:text-gray-600">Pasien</a><span class="text-gray-400 mx-1">›</span><span class="text-gray-900 font-medium">{{ patient.initials }}</span>{% endblock %}
+{% block topbar_actions %}
+{% if current_user.is_administrator or current_user.is_perawat %}
+<a href="{{ url_for('examinations.create', patient_id=patient.id) }}" class="inline-flex items-center gap-1.5 bg-green-600 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-green-700">
+    <i data-lucide="plus" class="w-4 h-4"></i> Buat Pemeriksaan
+</a>
+{% endif %}
+{% endblock %}
+{% block content %}
+<div class="space-y-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- Patient info -->
+        <div class="bg-white rounded-xl border border-gray-200 p-5">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 text-lg font-bold">{{ patient.initials[:1] }}</div>
+                <div>
+                    <h2 class="font-semibold text-gray-900">{{ patient.initials }}</h2>
+                    <p class="text-xs text-gray-500">{{ patient.patient_code }}</p>
+                </div>
+            </div>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between"><span class="text-gray-500">Jenis Kelamin</span><span class="font-medium">{{ patient.sex }}</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Tanggal Lahir</span><span class="font-medium">{{ patient.birth_date.strftime('%d %b %Y') if patient.birth_date else '-' }}</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Umur (hitung)</span><span class="font-medium">{{ age_months }} bulan</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">No. RM</span><span class="font-medium">{{ patient.medical_record_number or '-' }}</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Terdaftar</span><span class="font-medium">{{ patient.created_at.strftime('%d %b %Y') if patient.created_at else '-' }}</span></div>
+            </div>
+        </div>
+
+        <!-- Examinations history -->
+        <div class="lg:col-span-2 bg-white rounded-xl border border-gray-200">
+            <div class="px-5 py-4 border-b border-gray-100">
+                <h2 class="font-semibold text-gray-900 text-sm">Riwayat Pemeriksaan ({{ examinations|length }})</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-50">
+                        <tr class="text-gray-500 text-xs uppercase">
+                            <th class="text-left px-5 py-3 font-medium">Tanggal</th>
+                            <th class="text-left px-5 py-3 font-medium">Hasil Model</th>
+                            <th class="text-left px-5 py-3 font-medium">Kelas Final</th>
+                            <th class="text-left px-5 py-3 font-medium">Status</th>
+                            <th class="text-left px-5 py-3 font-medium"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        {% for exam in examinations %}
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-5 py-3">{{ exam.examination_date.strftime('%d %b %Y') if exam.examination_date else '-' }}</td>
+                            <td class="px-5 py-3">
+                                {% if exam.prediction %}
+                                {% set cls = exam.prediction.predicted_class %}
+                                {% set badge = {'Ringan': 'bg-green-100 text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat': 'bg-red-100 text-red-700'} %}
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium {{ badge.get(cls, 'bg-gray-100 text-gray-600') }}">{{ cls }}</span>
+                                {% else %}<span class="text-gray-400 text-xs">-</span>{% endif %}
+                            </td>
+                            <td class="px-5 py-3">
+                                {% if exam.prediction and exam.prediction.clinical_validation %}
+                                {% set fc = exam.prediction.clinical_validation.final_class %}
+                                {% set badge = {'Ringan': 'bg-green-100 text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat': 'bg-red-100 text-red-700'} %}
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium {{ badge.get(fc, 'bg-gray-100 text-gray-600') }}">{{ fc }}</span>
+                                {% else %}<span class="text-gray-400 text-xs">Belum divalidasi</span>{% endif %}
+                            </td>
+                            <td class="px-5 py-3">
+                                {% set status_map = {'draft': ('bg-gray-100 text-gray-600', 'Draft'), 'waiting_validation': ('bg-blue-100 text-blue-700', 'Menunggu'), 'validated': ('bg-green-100 text-green-700', 'Tervalidasi'), 'cancelled': ('bg-red-100 text-red-700', 'Dibatalkan')} %}
+                                {% set s_class, s_label = status_map.get(exam.status, ('bg-gray-100 text-gray-600', exam.status)) %}
+                                <span class="inline-flex px-2 py-0.5 rounded-md text-xs font-medium {{ s_class }}">{{ s_label }}</span>
+                            </td>
+                            <td class="px-5 py-3">
+                                <a href="{{ url_for('examinations.detail', exam_id=exam.id) }}" class="text-green-600 text-xs hover:underline">Detail</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr><td colspan="5" class="px-5 py-8 text-center text-gray-400 text-sm">Belum ada pemeriksaan.</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

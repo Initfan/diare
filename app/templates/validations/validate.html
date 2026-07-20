@@ -1,0 +1,107 @@
+{% extends "layouts/app.html" %}
+{% block title %}Validasi Pemeriksaan #{{ examination.id }}{% endblock %}
+{% block breadcrumb %}<a href="{{ url_for('validations.index') }}" class="text-gray-400 hover:text-gray-600">Validasi</a><span class="text-gray-400 mx-1">›</span><span class="text-gray-900 font-medium">Pemeriksaan #{{ examination.id }}</span>{% endblock %}
+{% block content %}
+<div class="max-w-3xl space-y-5">
+    <h1 class="text-2xl font-bold text-gray-900">Validasi Dokter</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Patient & symptoms info -->
+        <div class="bg-white rounded-xl border border-gray-200 p-5 space-y-3 text-sm">
+            <h2 class="font-semibold text-gray-900 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-gray-500"></i> Data Pasien & Gejala</h2>
+            {% set rows = [
+                ('Pasien', examination.patient.initials + ' (' + examination.patient.patient_code + ')'),
+                ('Jenis Kelamin', examination.patient.sex),
+                ('Umur', (examination.age_months|string) + ' bulan'),
+                ('Lama Diare', (examination.diarrhea_duration_days|string) + ' hari'),
+                ('Frekuensi BAB', (examination.bowel_movement_frequency|string) + 'x/hari'),
+                ('Konsistensi Feses', examination.stool_consistency),
+                ('Warna Feses', examination.stool_color),
+                ('Ada Lendir', examination.has_mucus),
+                ('Ada Darah', examination.has_blood),
+                ('Demam', examination.has_fever),
+                ('Suhu Tubuh', (examination.body_temperature|string) + ' °C'),
+                ('Muntah', examination.has_vomiting),
+                ('Tanda Dehidrasi', examination.dehydration_sign),
+            ] %}
+            {% for label, value in rows %}
+            <div class="flex justify-between border-b border-gray-50 pb-2">
+                <span class="text-gray-500">{{ label }}</span>
+                <span class="font-medium text-right">{{ value or '-' }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Prediction result -->
+        <div class="space-y-4">
+            {% set cls = prediction.predicted_class %}
+            {% set badge = {'Ringan': 'bg-green-100 text-green-800 border-green-200', 'Sedang': 'bg-amber-100 text-amber-800 border-amber-200', 'Berat': 'bg-red-100 text-red-800 border-red-200'} %}
+            <div class="{{ badge.get(cls, 'bg-gray-100 text-gray-800 border-gray-200') }} border-2 rounded-xl p-5 text-center">
+                <p class="text-sm text-gray-600 mb-1">Hasil Prediksi Model</p>
+                <p class="text-3xl font-bold">{{ cls }}</p>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-5">
+                <p class="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wide">Probabilitas</p>
+                {% for label, score, color in [('Ringan', prediction.mild_score, 'bg-green-500'), ('Sedang', prediction.moderate_score, 'bg-amber-400'), ('Berat', prediction.severe_score, 'bg-red-500')] %}
+                <div class="mb-2">
+                    <div class="flex justify-between text-sm mb-0.5">
+                        <span class="text-gray-600">{{ label }}</span>
+                        <span class="font-bold">{{ (score * 100)|round(1) }}%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2">
+                        <div class="{{ color }} h-2 rounded-full" style="width: {{ (score * 100)|round(1) }}%"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Validation form -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h2 class="font-semibold text-gray-900 mb-5 flex items-center gap-2">
+            <i data-lucide="stethoscope" class="w-4 h-4 text-blue-600"></i> Keputusan Klinis Dokter
+        </h2>
+        <form method="POST" id="validationForm">
+            {{ form.hidden_tag() }}
+            <div class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5">Keputusan <span class="text-red-500">*</span></label>
+                    {{ form.decision(class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500", id="decisionSelect", onchange="onDecisionChange()") }}
+                </div>
+                <div id="finalClassRow">
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5">Kelas Final <span class="text-red-500">*</span></label>
+                    {{ form.final_class(class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500") }}
+                </div>
+                <div id="overrideReasonRow" class="hidden">
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5">Alasan Perubahan <span class="text-red-500">*</span></label>
+                    {{ form.override_reason(class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 h-24 resize-none", placeholder="Jelaskan alasan perubahan hasil model...") }}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5">Diagnosis Klinis Awal</label>
+                    {{ form.initial_clinical_diagnosis(class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder="Diagnosis klinis awal dokter (opsional)") }}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5">Catatan Klinis</label>
+                    {{ form.clinical_note(class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 h-20 resize-none", placeholder="Catatan klinis tambahan (opsional)") }}
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-700">
+                    <i data-lucide="lock" class="w-3.5 h-3.5 inline mr-1"></i>
+                    Menyimpan validasi akan <strong>mengunci pemeriksaan</strong> dan tidak dapat diedit kembali.
+                </div>
+                <div class="flex gap-3 pt-2">
+                    {{ form.submit(class="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 cursor-pointer") }}
+                    <a href="{{ url_for('validations.index') }}" class="px-6 py-2.5 text-gray-600 text-sm hover:text-gray-900">Kembali</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+function onDecisionChange() {
+    const val = document.getElementById('decisionSelect').value;
+    document.getElementById('overrideReasonRow').classList.toggle('hidden', val !== 'overridden');
+}
+onDecisionChange();
+</script>
+{% endblock %}

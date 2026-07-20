@@ -1,0 +1,7 @@
+{
+  "target_classes": [
+    "Berat",
+    "Ringan",
+    "Sedang"
+  ]
+}

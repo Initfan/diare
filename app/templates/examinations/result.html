@@ -1,0 +1,186 @@
+{% extends "layouts/app.html" %} {% block title %}Hasil Skrining #{{
+examination.id }}{% endblock %} {% block breadcrumb %}<a
+  href="{{ url_for('examinations.index') }}"
+  class="text-gray-400 hover:text-gray-600"
+  >Pemeriksaan</a
+><span class="text-gray-400 mx-1">›</span
+><span class="text-gray-900 font-medium"
+  >Hasil Skrining #{{ examination.id }}</span
+>{% endblock %} {% block content %}
+<div class="max-w-2xl space-y-5">
+  <div class="flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-gray-900">Hasil Skrining</h1>
+    {% if examination.status == 'waiting_validation' and (current_user.is_dokter
+    or current_user.is_administrator) %}
+    <a
+      href="{{ url_for('validations.validate', exam_id=examination.id) }}"
+      class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700"
+    >
+      <i data-lucide="check-circle" class="w-4 h-4"></i> Validasi
+    </a>
+    {% endif %}
+  </div>
+
+  <!-- Predicted class badge -->
+  {% set cls = prediction.predicted_class %} {% set cls_config = { 'Ringan':
+  {'color': 'bg-green-100 text-green-800 border-green-200', 'icon':
+  'check-circle', 'icon_color': 'text-green-500', 'score':
+  prediction.mild_score}, 'Sedang': {'color': 'bg-amber-100 text-amber-800
+  border-amber-200', 'icon': 'alert-circle', 'icon_color': 'text-amber-500',
+  'score': prediction.moderate_score}, 'Berat': {'color': 'bg-red-100
+  text-red-800 border-red-200', 'icon': 'alert-triangle', 'icon_color':
+  'text-red-500', 'score': prediction.severe_score}, } %} {% set cfg =
+  cls_config.get(cls, {'color': 'bg-gray-100 text-gray-800 border-gray-200',
+  'icon': 'help-circle', 'icon_color': 'text-gray-500', 'score': 0}) %}
+
+  <div class="{{ cfg.color }} border-2 rounded-xl p-6 text-center">
+    <i
+      data-lucide="{{ cfg.icon }}"
+      class="w-12 h-12 {{ cfg.icon_color }} mx-auto mb-3"
+    ></i>
+    <p class="text-sm font-medium text-gray-600 mb-1">Hasil Prediksi Model</p>
+    <p class="text-4xl font-bold">{{ cls }}</p>
+    <p class="text-sm mt-2 opacity-75">
+      Probabilitas: {{ (cfg.score * 100)|round(1) }}%
+    </p>
+  </div>
+
+  <!-- Probability bars -->
+  <div class="bg-white rounded-xl border border-gray-200 p-5">
+    <h2 class="font-semibold text-gray-900 mb-4 text-sm">
+      Skor Probabilitas per Kelas
+    </h2>
+    <div class="space-y-3">
+      {% for label, score, color in [ ('Ringan', prediction.mild_score,
+      'bg-green-500'), ('Sedang', prediction.moderate_score, 'bg-amber-400'),
+      ('Berat', prediction.severe_score, 'bg-red-500'), ] %}
+      <div>
+        <div class="flex justify-between text-sm mb-1">
+          <span class="font-medium text-gray-700">{{ label }}</span>
+          <span class="font-bold text-gray-900"
+            >{{ (score * 100)|round(1) }}%</span
+          >
+        </div>
+        <div class="w-full bg-gray-100 rounded-full h-2.5">
+          <div
+            class="{{ color }} h-2.5 rounded-full transition-all"
+            style="width: {{ (score * 100)|round(1) }}%"
+          ></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Meta info -->
+  <div class="bg-white rounded-xl border border-gray-200 p-5">
+    <h2 class="font-semibold text-gray-900 mb-4 text-sm">
+      Informasi Model & Prediksi
+    </h2>
+    <div class="grid grid-cols-2 gap-4 text-sm">
+      <div>
+        <p class="text-gray-500 text-xs">Versi Model</p>
+        <p class="font-medium">
+          {{ prediction.model_version.version if prediction.model_version else
+          '-' }}
+        </p>
+      </div>
+      <div>
+        <p class="text-gray-500 text-xs">Tanggal Training</p>
+        <p class="font-medium">
+          {{ prediction.model_version.training_date.strftime('%d %b %Y') if
+          prediction.model_version and prediction.model_version.training_date
+          else '-' }}
+        </p>
+      </div>
+      <div>
+        <p class="text-gray-500 text-xs">Waktu Prediksi</p>
+        <p class="font-medium">
+          {{ prediction.predicted_at.strftime('%d %b %Y %H:%M') if
+          prediction.predicted_at else '-' }}
+        </p>
+      </div>
+      <div>
+        <p class="text-gray-500 text-xs">Status</p>
+        {% set status_map = {'draft': ('bg-gray-100 text-gray-600', 'Draft'),
+        'waiting_validation': ('bg-blue-100 text-blue-700', 'Menunggu Dokter'),
+        'validated': ('bg-green-100 text-green-700', 'Tervalidasi')} %} {% set
+        s_class, s_label = status_map.get(examination.status, ('bg-gray-100
+        text-gray-600', examination.status)) %}
+        <span
+          class="inline-flex px-2 py-0.5 rounded-md text-xs font-medium mt-1 {{ s_class }}"
+          >{{ s_label }}</span
+        >
+      </div>
+    </div>
+
+    {% if prediction.warning_metadata_json %} {% set warnings =
+    prediction.warning_metadata_json | tojson | safe %}
+    <div
+      class="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-700"
+    >
+      <i data-lucide="alert-circle" class="w-3.5 h-3.5 inline mr-1"></i>
+      <strong>Peringatan Input:</strong>
+      <p class="mt-1">{{ prediction.warning_metadata_json }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Disclaimer -->
+  <div
+    class="bg-red-50 border border-red-200 rounded-xl p-4 text-xs text-red-700"
+  >
+    <i data-lucide="shield-alert" class="w-4 h-4 inline mr-1"></i>
+    <strong>Disclaimer:</strong> Hasil sistem merupakan alat bantu skrining
+    berdasarkan pola data dan <strong>tidak menggantikan</strong> pemeriksaan,
+    diagnosis, maupun keputusan dokter. Model ini belum tervalidasi secara
+    klinis hanya berdasarkan pengujian dataset.
+  </div>
+
+  <!-- Validation info if already validated -->
+  {% if examination.prediction and examination.prediction.clinical_validation %}
+  {% set val = examination.prediction.clinical_validation %}
+  <div class="bg-white rounded-xl border border-gray-200 p-5">
+    <h2
+      class="font-semibold text-gray-900 mb-4 text-sm flex items-center gap-2"
+    >
+      <i data-lucide="user-check" class="w-4 h-4 text-blue-600"></i> Keputusan
+      Dokter
+    </h2>
+    <div class="space-y-3 text-sm">
+      <div class="flex justify-between">
+        <span class="text-gray-500">Keputusan</span
+        ><span class="font-medium"
+          >{{ 'Setuju' if val.decision == 'accepted' else 'Diubah' }}</span
+        >
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-gray-500">Kelas Final</span>
+        {% set fc = val.final_class %} {% set badge = {'Ringan': 'bg-green-100
+        text-green-700', 'Sedang': 'bg-amber-100 text-amber-700', 'Berat':
+        'bg-red-100 text-red-700'} %}
+        <span
+          class="inline-flex px-2 py-0.5 rounded-md text-xs font-medium {{ badge.get(fc, 'bg-gray-100 text-gray-600') }}"
+          >{{ fc }}</span
+        >
+      </div>
+      {% if val.override_reason %}
+      <div>
+        <p class="text-gray-500 text-xs">Alasan Perubahan</p>
+        <p class="mt-1 text-gray-700 bg-gray-50 rounded-lg p-2">
+          {{ val.override_reason }}
+        </p>
+      </div>
+      {% endif %} {% if val.clinical_note %}
+      <div>
+        <p class="text-gray-500 text-xs">Catatan Klinis</p>
+        <p class="mt-1 text-gray-700 bg-gray-50 rounded-lg p-2">
+          {{ val.clinical_note }}
+        </p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
